@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDジャケットクイズ</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>終わりなきCDジャケットクイズ</h1>
+
+    <div>
+      <button id="easy-btn">かんたん</button>
+      <button id="hard-btn">むずかしい</button>
+    </div>
+
+    <div id="image-container">
+      <!-- ここに画像が表示される -->
+    </div>
+
+    <div>
+      <button id="start-btn">START</button>
+      <button id="stop-btn">STOP</button>
+    </div>
+
+    <div class="answer-container">
+      <!-- EASYモードの選択肢 -->
+      <div id="choice-container" style="display: none"></div>
+
+      <!-- HARDモードの入力欄 -->
+      <input type="text" id="title-input" placeholder="CDのタイトルを入力" />
+
+      <!-- 共通の回答ボタン -->
+      <button id="answer-btn">さぁ 一発でクリアしよう！！</button>
+    </div>
+
+    <p id="result"></p>
+
+    <!-- jQueryとJavaScriptの読み込み（フッターで読み込み） -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

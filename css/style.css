@@ -1,0 +1,188 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  background-color: #121212;
+  color: #f4f4f9;
+}
+
+/* ヘッダー */
+h1 {
+  color: #e0e0e0;
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* 画像コンテナ */
+#image-container {
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2c2c2c;
+  border: 2px solid #444;
+}
+
+/* 画像の設定 */
+.cd-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  transition: opacity 0.3s;
+}
+
+/* 基本ボタンスタイル */
+button {
+  margin: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* EASY / HARD ボタン */
+#easy-btn,
+#hard-btn {
+  background-color: #333;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: 2px solid #444;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#easy-btn:hover,
+#hard-btn:hover {
+  background-color: #555;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* 選択中のモードボタン */
+.selected-mode {
+  background-color: #1e88e5 !important;
+  box-shadow: 0 0 12px rgba(30, 136, 229, 0.6);
+  border-color: #1e88e5;
+}
+
+/* クイズ回答ボタン */
+#answer-btn {
+  background-color: #ff5722;
+  color: #ffffff;
+  border: 2px solid #e64a19;
+  font-weight: bold;
+  padding: 12px 25px;
+  width: 300px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  margin-top: 10px;
+}
+
+#answer-btn:hover {
+  background-color: #e64a19;
+  box-shadow: 0 4px 12px rgba(230, 74, 25, 0.6);
+}
+
+/* 入力欄と回答ボタンを中央に */
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+  position: relative;
+  height: 120px; /* 高さを固定して、選択肢/入力欄があっても高さが変わらない */
+  justify-content: space-between;
+}
+
+/* EASYモードの選択肢 */
+#choice-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.choice-btn {
+  padding: 10px 15px;
+  background-color: #3e3e3e;
+  color: #ffffff;
+  border: 2px solid #444;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.choice-btn:hover {
+  background-color: #555;
+}
+
+.choice-btn.selected {
+  background-color: #1e88e5;
+  color: #ffffff;
+}
+
+/* 入力欄と回答ボタンを中央に */
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+}
+
+/* 入力欄 */
+input {
+  padding: 10px;
+  width: 250px;
+  background-color: #2c2c2c;
+  border: 2px solid #444;
+  color: #ffffff;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #1e88e5;
+  outline: none;
+}
+
+/* 結果表示（非表示が初期状態） */
+#result {
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1e1e1e;
+  padding: 10px 15px;
+  border: 2px solid #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 300px;
+
+  /* 中央配置 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1000;
+}
+
+/* 背景に半透明のオーバーレイ（結果が見やすいように） */
+#result-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
